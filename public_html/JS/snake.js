@@ -139,6 +139,6 @@ function checkFoodCollisions(snakeHeadX, snakeHeadY) {
 
 function checkWallCollisions(snakeHeadX, snakeHeadY) {
     if(snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0 || snakeHeadY * snakeSize >= screenHeight || snakeHeadY * snakeSize< 0){
-        console.log("Wall Collision");
+        console.log("Wall Collision!");
     }
 }
