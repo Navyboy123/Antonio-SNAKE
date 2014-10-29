@@ -9,6 +9,7 @@ var context;
 var screenWidth;
 var screenHeight;
 var gameState;
+var gameOverMenu;
 
 gameInitialize();
 snakeInitialize();
@@ -27,7 +28,10 @@ function gameInitialize () {
     canvas.height = screenHeight;
     
     document.addEventListener("keydown", keyboardHandler);
-    gameState("Play");
+    
+    gameOverMenu= document.getElementById("gameOver");
+    
+    setState("Play");
 }
 
 function gameLoop (){
@@ -158,17 +162,20 @@ function checkWallCollisions(snakeHeadX, snakeHeadY) {
      }
  }
  
- function gameState (state) {
+ function setState (state) {
      gameState = state;
-     displayMenu(state);
+     showMenu(state);
  }
  
- function displayMenu(menu) {
+ function displayMenu (menu){
      menu.style.visibility = "visible";
  }
-
-function hiddenMenu (menu) {
-    menu.style.visibility = "hidden"
-}
+ 
+ function showMenu (state){
+     if (state == "GameOver"){
+         displayMenu(gameOverMenu);
+     }
+ }
+ 
 
 
