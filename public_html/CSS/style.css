@@ -21,6 +21,7 @@ h1,h2 {
 .title {
     font-size: 68px;
     margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 #restartButton {

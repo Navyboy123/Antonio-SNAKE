@@ -30,6 +30,7 @@ function gameInitialize () {
     document.addEventListener("keydown", keyboardHandler);
     
     gameOverMenu= document.getElementById("gameOver");
+    centerMenuPosistion(gameOverMenu);
     
     setState("Play");
 }
@@ -165,7 +166,12 @@ function checkWallCollisions(snakeHeadX, snakeHeadY) {
  function setState (state) {
      gameState = state;
      showMenu(state);
- }
+ } 
+ 
+ /*-----------------------------------------------------------------------------
+  * Menu Functions
+  * ----------------------------------------------------------------------------
+  */
  
  function displayMenu (menu){
      menu.style.visibility = "visible";
@@ -175,7 +181,14 @@ function checkWallCollisions(snakeHeadX, snakeHeadY) {
      if (state == "GameOver"){
          displayMenu(gameOverMenu);
      }
+ } 
+ 
+ function centerMenuPosistion (menu) {
+     menu.style.top= (screenHeight / 2) - (menu.offsetHeight / 2 ) + "px";
+     menu.style.left= (screenWidth / 2) - (menu.offsetWidth / 2 ) + "px";
  }
+ 
+ 
  
 
 
