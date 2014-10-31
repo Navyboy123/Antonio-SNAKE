@@ -12,7 +12,12 @@ body{
     visibility: hidden;
 }
 
-h1,h2 {
+#playHUD{
+    position: absolute;
+    visibility: hidden;
+}
+
+h1,h2,h3 {
     font-family: 'Permanent Marker', cursive;
     color: black;
      text-align: center;
